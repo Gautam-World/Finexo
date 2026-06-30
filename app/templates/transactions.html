@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Transactions
+{% endblock %}
+
+{% block page_title %}
+Transactions
+{% endblock %}
+
+{% block content %}
+
+<div class="table-card">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>Transactions</h4>
+
+        <a href="{{ url_for('transactions.add_transaction') }}" class="btn btn-primary">
+            + Add Transaction
+        </a>
+    </div>
+
+    <table class="table table-hover">
+
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Payment</th>
+                <th class="text-end">Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for t in transactions %}
+
+        <tr>
+
+        <td>{{ t.date.strftime('%d-%m-%Y') }}</td>
+
+        <td>{{ t.title }}</td>
+
+        <td>{{ t.category.name }}</td>
+
+        <td>{{ t.transaction_type }}</td>
+
+        <td>{{ t.payment_method }}</td>
+
+        <td class="text-end">
+
+        ₹ {{ "%.2f"|format(t.amount) }}
+
+        </td>
+
+        </tr>
+
+        {% else %}
+
+        <tr>
+
+        <td colspan="6" class="text-center">
+
+        No Transactions
+
+        </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

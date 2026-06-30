@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2>Categories</h2>
+
+    <hr>
+
+    <form method="POST" action="{{ url_for('categories.add_category') }}">
+
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="Category Name"
+                >
+
+            </div>
+
+            <div class="col-md-4">
+
+                <button class="btn btn-primary w-100">
+                    Add Category
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <hr>
+
+    <table class="table table-bordered">
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Name</th>
+
+            <th width="150">Action</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for category in categories %}
+
+        <tr>
+
+            <td>{{ category.id }}</td>
+
+            <td>{{ category.name }}</td>
+
+            <td>
+
+                <a
+                    href="{{ url_for('categories.delete_category', id=category.id) }}"
+                    class="btn btn-danger btn-sm"
+                >
+
+                    Delete
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

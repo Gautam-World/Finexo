@@ -1,0 +1,262 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f7fc;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 420px;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.auth-card .logo {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    background: #111827;
+    color: white;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.sidebar .logo {
+    color: white;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: .3s;
+}
+
+.sidebar a:hover {
+    background: #2563eb;
+}
+
+.sidebar i {
+    width: 24px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 30px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    background: white;
+    border-radius: 15px;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    margin-bottom: 25px;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.summary-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    transition: .3s;
+    margin-bottom: 20px;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+}
+
+.summary-card h6 {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.summary-card h2 {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.table-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table th {
+    background: #f8fafc;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+    background: #2563eb;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 .2rem rgba(37,99,235,.2);
+}
+
+/* =========================
+   ALERTS
+========================= */
+
+.alert {
+    border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .sidebar{
+        width:70px;
+        padding:20px 10px;
+    }
+
+    .sidebar .logo{
+        font-size:18px;
+    }
+
+    .sidebar a{
+        text-align:center;
+        padding:15px;
+    }
+
+    .sidebar a span{
+        display:none;
+    }
+
+    .sidebar i{
+        width:auto;
+    }
+
+    .main-content{
+        margin-left:70px;
+        width:calc(100% - 70px);
+    }
+}
+
+@media(max-width:768px){
+
+    .main-content{
+        padding:15px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .auth-card{
+        width:95%;
+    }
+}

@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+Dashboard
+
+{% endblock %}
+
+{% block page_title %}
+
+Dashboard
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="summary-card">
+
+            <h6>Cash In Hand</h6>
+
+            <h2>
+
+                ₹ {{cash}}
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="summary-card">
+
+            <h6>Cash In Bank</h6>
+
+            <h2>
+
+                ₹ {{bank}}
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="summary-card">
+
+            <h6>Total Balance</h6>
+
+            <h2>
+
+                ₹ {{total}}
+
+            </h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="table-card">
+
+    <h4>
+
+        Recent Transactions
+
+    </h4>
+
+    <hr>
+
+    Coming Soon...
+
+</div>
+
+{% endblock %}
